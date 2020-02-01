@@ -1,0 +1,94 @@
+{% load static %}
+<html>
+<head>
+    <title>login</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">    
+    <link rel="stylesheet" href="css/addsite.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>  
+</head>
+
+<body>
+        <!--Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">We5</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'gsc-home' %}">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-visualize' %}">Visualize</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-documentation' %}">Documentation</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-about'%}">About us</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+
+
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
+   
+
+<div class="bg">
+
+<div class="add-site">
+    <img src="images/addsite1.png" class="avatar">
+        <h1>Add Site</h1>
+            <form>
+            <p>Title</p>
+            <input type="text" name="title" placeholder="Enter Title">
+            <p>Enter URL</p>
+            <input type="text" name="url" placeholder="Enter URL">
+            <input type="submit" name="submit" value="Add">
+            <div align="center">
+                <br>
+                <a href="index.html" style="color: yellow"><u>Go Back</u></a>
+                
+                 
+            </div>    
+            </form>
+        </div>  
+</div>
+
+<footer>
+<div class="opct opacity-10" style="background-color: #3e3e3e;">
+ <div class="row">
+    <div class="col-sm-3 col-md-4" style="padding-left: 35px;padding-top: 15px;padding-bottom: 20px;">
+      <font color="white"> <h3>&nbsp;&nbsp;&nbsp;About US</h3><br>
+      Since 2019, We5 has been<br>the trusted software development <br>partner for customer across the<br> globe. We5 offers software development <br>services to small and midsize technologies<br> and consulting companies. </font>
+    </div>
+
+    <div class="col-sm-9 col-md-4" style="padding-left:200px;padding-top: 25px;">
+      <font color="white"> <h3>Quick Link</h3><br>
+      <a href="{% url 'gsc-home' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br><a href="{% url 'gsc-visualize' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Visualize</u></a><br><a href="{% url 'gsc-documentation' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Documentation</u></a><br><a href="{% url 'gsc-about' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br></font>
+    </div>
+
+    <div class="col-sm-9 col-md-4" style="padding-left: 200px;padding-top: 25px;">
+      <font color="white">
+        <h3>Contact US</h3><br>
+        CSE Department TKIET,<br>Warananagar Kolhapur 416113<br>Phone: 1234567890<br>Email: we5@gmail.com<br> Website: www.we5.com</font>
+    </div>
+
+  </div>
+</div>
+
+</footer>
+          </body>
+</html>

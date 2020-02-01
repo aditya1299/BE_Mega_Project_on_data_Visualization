@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+</head>
+<body>
+<html>
+<head>
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'gsc/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+    <body>
+    <div class="signup-box">
+    <img src="images/loginprofile.png" class="avatar">
+        <h1>Sign Up Here</h1>
+            <form>
+            <p>Organization/Owner Name</p>
+            <input type="text" name="name" placeholder="Enter Organization/Owner Name">
+             <p>Username/Email</p>
+            <input type="text" name="username" placeholder="Enter Username/Email">
+             <p>Password</p>
+            <input type="text" name="password" placeholder="Enter Password">
+             <p>Retype Password</p>
+            <input type="text" name="repassword" placeholder="Enter Password">
+             <p>Phone Number</p>
+            <input type="text" name="phone" placeholder="Phone Number">
+            <input type="submit" name="submit" value="Sign Up">
+
+            <div align="center">
+
+                    <a href="" style="color: #35F3F7"><u>Terms & Conditions</u></a> and <a href="" style="color: #35F3F7"><u>Privacy Policy</u></a>
+                <h5>Already have an account? <a href="{% url 'gsc-signin'%}" style="color: #35F3F7"><u>Sign in here!</u></a></h5>
+                <h6><a href="{% url 'gsc-home'%}" style="color: yellow"><u>Go back to home!</u></a></h6>
+            </div>
+
+            </form>
+        </div>
+    </body>
+</html>
+</body>
+</html>

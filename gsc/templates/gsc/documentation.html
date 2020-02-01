@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	<!--
+		Bootstrap 4 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+		To ensure proper rendering and touch zooming, add the following <meta> tag inside the <head> element:
+	-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+ <!-- <link rel="stylesheet" type="text/css" href="{% static 'gsc/style.css' %}">-->
+  <link rel="stylesheet" href="slider.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+
+
+
+<!--Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">We5</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'gsc-home' %}">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-visualize' %}">Visualize</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Documentation</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-about'%}">About us</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-signup' %}">Sign up</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-signin' %}">Sign in</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
+<!-- Slider -->
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="profile.jpg" alt="Los Angeles" width="2000" height="600">
+    </div>
+    <div class="carousel-item">
+      <img src="profile.jpg" alt="Chicago" width="2000" height="600">
+    </div>
+    <div class="carousel-item">
+      <img src="profile.jpg" alt="New York" width="2000" height="600">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
+
+
+
+
+
+
+<!-- slider end-->
+
+
+<footer>
+<div class="opct opacity-10" style="background-color: #3e3e3e;">
+ <div class="row">
+    <div class="col-sm-3 col-md-4" style="padding-left: 35px;padding-top: 15px;padding-bottom: 20px;">
+      <font color="white"> <h3>&nbsp;&nbsp;&nbsp;About US</h3><br>
+      Since 2019, We5 has been<br>the trusted software development <br>partner for customer across the<br> globe. We5 offers software development <br>services to small and midsize technologies<br> and consulting companies. </font>
+    </div>
+
+    <div class="col-sm-9 col-md-4" style="padding-left:200px;padding-top: 25px;">
+      <font color="white"> <h3>Quick Link</h3><br>
+      <a href="{% url 'gsc-home' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br><a href="{% url 'gsc-visualize' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Visualize</u></a><br><a href="#" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Documentation</u></a><br><a href="{% url 'gsc-about' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br></font>
+    </div>
+
+    <div class="col-sm-9 col-md-4" style="padding-left: 200px;padding-top: 25px;">
+      <font color="white">
+        <h3>Contact US</h3><br>
+        CSE Department TKIET,<br>Warananagar Kolhapur 416113<br>Phone: 1234567890<br>Email: we5@gmail.com<br> Website: www.we5.com</font>
+    </div>
+
+  </div>
+</div>
+
+</footer>
+</body>

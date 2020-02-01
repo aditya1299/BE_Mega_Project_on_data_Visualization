@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+<head>
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'gsc/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+    <body>
+    <div class="login-box">
+    <img src="images/loginprofile.png" class="avatar">
+        <h1>Login Here</h1>
+            <form>
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Sign In">
+            <div align="center">
+                <a href="#"><u>Forget Password</u></a>
+                <h5>Don't have an account? <a href="{% url 'gsc-signup' %}" style="color: #35F3F7"><u>Sign up here!</u></a></h5>
+                 <h6><a href="{% url 'gsc-home'%}" style="color: yellow"><u>Go back to home!</u></a></h6>
+            </div>    
+            </form>
+        </div>
+    </body>
+</html>
