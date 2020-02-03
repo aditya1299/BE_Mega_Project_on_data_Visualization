@@ -14,6 +14,9 @@ def about(request):
 
 
 def signup(request):
+    if request.method=='POST':
+        email=request.POST['email']
+
     return render(request, 'gsc/signup.html')
 
 
