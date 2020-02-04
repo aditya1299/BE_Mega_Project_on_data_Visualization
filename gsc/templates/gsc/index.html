@@ -24,7 +24,7 @@
 
 <body>
 <!--Navbar -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark">
   <a class="navbar-brand" href="#">We5</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,30 +108,32 @@
   webpage visually. Your website/webpage must be
   registered with Google Search Console.
     Start Adding...</font>
+    <br><br><br>
   </p>
-   <a href="addsite.html" class="btn btn-primary" style="margin-right: 100px;font-size: 34px;">Add Your Site</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="your sites.html" style="font-size: 34px;" class="btn btn-primary">View Your Sites</a>
+   <a href="{% url 'gsc-addsite' %}" class="btn btn-primary" style="margin-right: 100px;font-size: 34px;">Add Your Site</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="{% url 'gsc-letsstart' %}" style="font-size: 34px;" class="btn btn-primary">View Your Sites</a>
   <br><br>
 </div>
 <br><br>
 <hr>
 <br><br>
 <!-- RANK VISUALIZATION END -->
+
 <!-- GOOGLE SEARCH CONSOLE START -->
 <div align="center">
-  <font size="34" ><strong><u>GOOGLE SEARCH CONSOLE</u></strong></font><br><br>
+  <font size="34" ><strong><u>GOOGLE SEARCH CONSOLE</u></strong></font><br><br><br>
 </div>
 <div class="container">
 <div class="row">
-  <div class="col" style="padding-right: 50px;" align="center">
-    <br><br>
-    <p>
-      <font size="4">No idea about Google Search Console<br>...See the video<br><br>To know more about Google Search Console visit<br>
-      <a href="https://search.google.com/search-console/about"><u>https://search.google.com/search-console/about</u></a></font>
+  <div class="col-6" style="padding-right: 300px;" align="center">
+
+    <p align="center">
+      <font size="5">No idea about<br>Google Search Console<br>See the video<br><br>To know more about<br>Google Search Console<br>Visit
+        <br><a href="https://search.google.com/search-console/about"><u>https://search.google.com/search-console/about</u></a></font>
     </p>
   </div>
 
-  <div class="col" style="padding-left: 60px;" align="center">
+  <div class="col-6" style="padding-left: 100px;" align="center">
     <video width="720" height="300" controls="">
       <source src="{% static 'gsc/videos/gsc.mp4' %}"  type="video/mp4">
     </video>
@@ -143,19 +145,20 @@
 
 <br><br>
 <footer>
-<div class="opct opacity-10" style="background-color: #3e3e3e;">
- <div class="row">
-    <div class="col-sm-3 col-md-4" style="padding-left: 35px;padding-top: 15px;padding-bottom: 20px;">
+<div class="container-fluid opct opacity-10" style="background-color: #3e3e3e;">
+ <div class="row justify-content-md-center">
+    <div class="col-6 col-md-4" style="padding-left: 35px;padding-top: 15px;padding-bottom: 20px;">
       <font color="white"> <h3>&nbsp;&nbsp;&nbsp;About US</h3><br>
       Since 2019, We5 has been<br>the trusted software development <br>partner for customer across the<br> globe. We5 offers software development <br>services to small and midsize technologies<br> and consulting companies. </font>
     </div>
 
-    <div class="col-sm-9 col-md-4" style="padding-left:200px;padding-top: 25px;">
+    <div class="col-6 col-md-4 align-items-start" style="padding-left:200px;padding-top: 25px;">
       <font color="white"> <h3>Quick Link</h3><br>
-      <a href="{% url 'gsc-home' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br><a href="{% url 'gsc-visualize' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Visualize</u></a><br><a href="{% url 'gsc-documentation' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Documentation</u></a><br><a href="{% url 'gsc-about' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br></font>
+      <a href="{% url 'gsc-home' %}" style="color: white"><u>Home</u></a><br><a href="{% url 'gsc-visualize' %}" style="color: white"><u>Visualize</u></a><br>
+        <a href="{% url 'gsc-documentation' %}" style="color: white"><u>Documentation</u></a><br><a href="{% url 'gsc-about' %}" style="color: white"><u>About us</u></a><br></font>
     </div>
 
-    <div class="col-sm-9 col-md-4" style="padding-left: 200px;padding-top: 25px;">
+    <div class="col-6 col-md-4" style="padding-left: 200px;padding-top: 25px;">
       <font color="white">
         <h3>Contact US</h3><br>
         CSE Department TKIET,<br>Warananagar Kolhapur 416113<br>Phone: 1234567890<br>Email: we5@gmail.com<br> Website: www.we5.com</font>
