@@ -15,9 +15,10 @@
 </head>
     <body>
     <div class="signup-box">
-    <img src="images/loginprofile.png" class="avatar">
+    <img src="{% static 'gsc/images/loginprofile.png' %}" class="avatar">
         <h1>Sign Up Here</h1>
-            <form method="POST">
+            <form action="register" method='POST'>
+                {%csrf_token%}
             <p>Organization/Owner Name</p>
             <input type="text" name="name" placeholder="Enter Organization/Owner Name">
              <p>Username/Email</p>
