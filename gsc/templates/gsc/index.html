@@ -47,8 +47,20 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'gsc-about'%}">About us</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'gsc-graph'%}">graph</a>
+      </li>
     </ul>
+
+
+
+
     <ul class="navbar-nav ml-auto nav-flex-icons">
+
+           {% if user.is_authenticated %}
+    <li><font color="white">Hello,&nbsp; {{user.email}}</font></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <li><a href="{%url 'gsc-logout'%}">Log out</a></li>
+      {% else %}
 
         <li class="nav-item">
         <a class="nav-link" href="{% url 'gsc-signup' %}">Sign up</a>
@@ -58,6 +70,9 @@
         <a class="nav-link" href="{% url 'gsc-signin' %}">Sign in</a>
       </li>
     </ul>
+
+
+    {% endif  %}
   </div>
 </nav>
 <!--/.Navbar -->
@@ -156,6 +171,7 @@
       <font color="white"> <h3>Quick Link</h3><br>
       <a href="{% url 'gsc-home' %}" style="color: white"><u>Home</u></a><br><a href="{% url 'gsc-visualize' %}" style="color: white"><u>Visualize</u></a><br>
         <a href="{% url 'gsc-documentation' %}" style="color: white"><u>Documentation</u></a><br><a href="{% url 'gsc-about' %}" style="color: white"><u>About us</u></a><br></font>
+
     </div>
 
     <div class="col-6 col-md-4" style="padding-left: 200px;padding-top: 25px;">

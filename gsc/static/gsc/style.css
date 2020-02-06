@@ -1,10 +1,12 @@
+{% load static %}
 body{
     margin: 0;
     padding: 0;
-    background: url(login.jpg);
+    background: url(login.jpeg);
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
+    height: 100%;
 }
 
 /*LOGIN*/

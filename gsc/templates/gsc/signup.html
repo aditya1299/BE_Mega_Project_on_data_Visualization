@@ -14,19 +14,21 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
     <body>
+<div style="background-image: url({% static 'gsc/images/login.jpeg' %})">
+
     <div class="signup-box">
     <img src="{% static 'gsc/images/loginprofile.png' %}" class="avatar">
         <h1>Sign Up Here</h1>
-            <form action="register" method='POST'>
+            <form action="register" method='post'>
                 {%csrf_token%}
             <p>Organization/Owner Name</p>
-            <input type="text" name="name" placeholder="Enter Organization/Owner Name">
+            <input type="text" name="org_name" placeholder="Enter Organization/Owner Name">
              <p>Username/Email</p>
             <input type="text" name="username" placeholder="Enter Username/Email">
              <p>Password</p>
-            <input type="text" name="password" placeholder="Enter Password">
+            <input type="password" name="password" placeholder="Enter Password">
              <p>Retype Password</p>
-            <input type="text" name="repassword" placeholder="Enter Password">
+            <input type="password" name="repassword" placeholder="Enter Password">
              <p>Phone Number</p>
             <input type="text" name="phone" placeholder="Phone Number">
             <input type="submit" name="submit" value="Sign Up">
@@ -40,6 +42,12 @@
 
             </form>
         </div>
+        <div>
+            {%for message in mesasges %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+    </div>
     </body>
 </html>
 </body>
