@@ -7,12 +7,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
-    <body background="">
+    <body id="bg" style="background-image: url('{% static 'gsc/images/signup.jpg' %}')";>
     <div class="login-box">
-    <img src="images/loginprofile.png" class="avatar">
+    <img src="{% static 'gsc/images/loginprofile.png' %}" class="avatar">
         <h1>Login Here</h1>
             <form action="signin_action" method='post'>
-                {%csrf_token%}
+                {% csrf_token %}
             <p>Username</p>
             <input type="text" name="username" placeholder="Enter Username">
             <p>Password</p>

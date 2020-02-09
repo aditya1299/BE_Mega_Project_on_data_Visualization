@@ -8,11 +8,16 @@ body{
     font-family: sans-serif;
     height: 100%;
 }
-
+#bg{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
 /*LOGIN*/
 .login-box{
     width: 400px;
-    height: 455px;
+    height: 470px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     top: 50%;
@@ -86,7 +91,7 @@ h1{
 
 .signup-box{
     width: 400px;
-    height: 600px;
+    height: 730px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     top: 50%;
@@ -142,8 +147,16 @@ h1{
 {
     color: #39dc79;
 }
-
-
+/*footer*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
 
 
 

@@ -1,10 +1,20 @@
+{% load static %}
 /*Add Site*/
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url(login.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    height: 100%;
+}
 .bg {
   /* The image used */
-  background-image: url("login.jpg");
 
   /* Full height */
-  height: 100%; 
+
 
   /* Center and scale the image nicely */
   background-position: center;

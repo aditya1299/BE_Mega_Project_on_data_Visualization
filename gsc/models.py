@@ -16,3 +16,9 @@ class users(models.Model):
     password = models.CharField(max_length=20)
     phone = models.CharField(max_length=16)
     org_name = models.TextField()
+
+
+class website(models.Model):
+    web_name = models.CharField(max_length=80)
+    website_url = models.TextField()
+    user_id = models.IntegerField()

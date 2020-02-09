@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from .models import users
+from .models import website
+# from .forms import websiteForm
 import psycopg2
 from django.contrib.auth.models import User, auth
 
@@ -35,27 +37,14 @@ def about(request):
     return render(request, 'gsc/about.html')
 
 
+def viewsites(request):
+    sites = website.objects.filter(user_id=request.user.id)
+    print('############################################')
+    return render(request, 'gsc/viewsites.html', {'websites': sites})
+
+
 def signup(request):
     return render(request, 'gsc/signup.html')
-
-
-def signin_action(request):
-
-    #if request.method == 'post':
-    if True:
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = auth.authenticate(username=username, password=password)
-        print(user)
-
-        if user is not None:
-            auth.login(request, user)
-            return render(request, 'gsc/index.html')
-        else:
-            messages.info(request, 'invalid credentials')
-            ##################pop up msg
-            return render(request, 'gsc/signin.html')
 
 
 def signin(request):
@@ -76,7 +65,12 @@ def documentation(request):
 
 
 def letsstart(request):
-    return render(request, 'gsc/letsstart.html')
+    #selected_site = request.POST['website']
+    #print('#############')
+    #print(selected_site)
+    selected_site='sanket'
+    #print('@@@@@@@@@@')
+    return render(request, 'gsc/letsstart.html', {'website': selected_site})
 
 
 def visualize(request):
@@ -105,3 +99,29 @@ def register(request):
         return redirect('/')
     else:
         return render(request, 'gsc/index.html')
+
+
+def signin_action(request):
+    username = request.POST['username']
+    password = request.POST['password']
+
+    user = auth.authenticate(username=username, password=password)
+    print(user)
+
+    if user is not None:
+        auth.login(request, user)
+        return render(request, 'gsc/index.html')
+    else:
+        messages.info(request, 'invalid credentials')
+        ##################pop up msg
+        return render(request, 'gsc/signin.html')
+
+
+# adding the website to application
+
+def addsite_action(request):
+    web_name = request.POST['web_name']
+    website_url = request.POST['website_url']
+    website_obj = website(web_name=web_name, website_url=website_url, user_id=request.user.id)
+    website_obj.save()
+    return render(request, 'gsc/index.html')

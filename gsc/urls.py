@@ -8,10 +8,12 @@ urlpatterns = [
     path('logout/', views.logout, name='gsc-logout'),
     path(r'signin/', views.signin, name='gsc-signin'),
     path('addsite/', views.addsite, name='gsc-addsite'),
+    path('viewsites/', views.viewsites, name='gsc-viewsites'),
     path('documentation/', views.documentation, name='gsc-documentation'),
-    path('letsstart/', views.letsstart, name='gsc-letsstart'),
-    path('visualize/', views.visualize, name='gsc-visualize'),
+    path('viewsites/letsstart', views.letsstart, name='gsc-letsstart'),
+    path('viewsites/letsstart/visualize/', views.visualize, name='gsc-visualize'),
     path('signup/register', views.register, name='gsc-register'),
     path('signin/signin_action', views.signin_action, name='gsc-signin_action'),
+    path('addsite/addsite_action', views.addsite_action, name='gsc-addsite_action'),
     path('graph', views.graph, name='gsc-graph')
 ]

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="{% ststic 'gsc/addsite.css' %}">
+    <link rel="stylesheet" href="{% static 'gsc/addsite.css' %}">
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -58,7 +58,10 @@
 <div class="add-site">
     <img src="images/addsite1.png" class="avatar">
         <h1>Let's Start</h1>
-            <form>
+    <form action="visualize">
+        {% csrf_token %}
+        <br><br>
+        <h1><label>{{website}}</label></h1>
             <p>Enter Keyword</p>
             <input type="text" name="keyword" placeholder="Enter Keyword">
             <p>Enter Device</p>
@@ -85,24 +88,26 @@
                 
                  
             </div>    
-            </form>
+    </form>
         </div>  
 </div>
 
 <footer>
-<div class="opct opacity-10" style="background-color: #3e3e3e;">
- <div class="row">
-    <div class="col-sm-3 col-md-4" style="padding-left: 35px;padding-top: 15px;padding-bottom: 20px;">
+<div class="container-fluid opct opacity-10" style="background-color: #3e3e3e;">
+ <div class="row justify-content-md-center">
+    <div class="col-6 col-md-4" style="padding-left: 35px;padding-top: 15px;padding-bottom: 20px;">
       <font color="white"> <h3>&nbsp;&nbsp;&nbsp;About US</h3><br>
       Since 2019, We5 has been<br>the trusted software development <br>partner for customer across the<br> globe. We5 offers software development <br>services to small and midsize technologies<br> and consulting companies. </font>
     </div>
 
-    <div class="col-sm-9 col-md-4" style="padding-left:200px;padding-top: 25px;">
+    <div class="col-6 col-md-4 align-items-start" style="padding-left:200px;padding-top: 25px;">
       <font color="white"> <h3>Quick Link</h3><br>
-      <a href="{% url 'gsc-home' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br><a href="{% url 'gsc-visualize' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Visualize</u></a><br><a href="{% url 'gsc-documentation' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Documentation</u></a><br><a href="{% url 'gsc-about' %}" style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Home</u></a><br></font>
+      <a href="{% url 'gsc-home' %}" style="color: white"><u>Home</u></a><br><a href="{% url 'gsc-visualize' %}" style="color: white"><u>Visualize</u></a><br>
+        <a href="{% url 'gsc-documentation' %}" style="color: white"><u>Documentation</u></a><br><a href="{% url 'gsc-about' %}" style="color: white"><u>About us</u></a><br></font>
+
     </div>
 
-    <div class="col-sm-9 col-md-4" style="padding-left: 200px;padding-top: 25px;">
+    <div class="col-6 col-md-4" style="padding-left: 200px;padding-top: 25px;">
       <font color="white">
         <h3>Contact US</h3><br>
         CSE Department TKIET,<br>Warananagar Kolhapur 416113<br>Phone: 1234567890<br>Email: we5@gmail.com<br> Website: www.we5.com</font>
@@ -112,5 +117,5 @@
 </div>
 
 </footer>
-          </body>
+</body>
 </html>

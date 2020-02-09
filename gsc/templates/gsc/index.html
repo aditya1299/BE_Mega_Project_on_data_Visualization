@@ -38,7 +38,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'gsc-visualize' %}">Visualize</a>
+        <a class="nav-link" href="{% url 'gsc-viewsites' %}">Visualize</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'gsc-documentation' %}">Documentation</a>
@@ -58,7 +58,7 @@
     <ul class="navbar-nav ml-auto nav-flex-icons">
 
            {% if user.is_authenticated %}
-    <li><font color="white">Hello,&nbsp; {{user.email}}</font></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li><font color="white">Hello,&nbsp; {{user.username}}</font></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <li><a href="{%url 'gsc-logout'%}">Log out</a></li>
       {% else %}
 
@@ -126,7 +126,7 @@
     <br><br><br>
   </p>
    <a href="{% url 'gsc-addsite' %}" class="btn btn-primary" style="margin-right: 100px;font-size: 34px;">Add Your Site</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="{% url 'gsc-letsstart' %}" style="font-size: 34px;" class="btn btn-primary">View Your Sites</a>
+  <a href="{% url 'gsc-viewsites' %}" style="font-size: 34px;" class="btn btn-primary">View Your Sites</a>
   <br><br>
 </div>
 <br><br>
