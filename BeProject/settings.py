@@ -26,7 +26,7 @@ SECRET_KEY = '9v)+26s1h@qql5-$ch05$#kfsf5en$=*p6$1@9f6izrc*nd(c_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["we5.com"]
 
 
 # Application definition
@@ -124,5 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/gsc/'
+GOOGLE_OAUTH2_CLIENT_SECRETS_JSON = 'client_secrets.json'
+
 
 

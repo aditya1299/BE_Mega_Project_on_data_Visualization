@@ -15,5 +15,7 @@ urlpatterns = [
     path('signup/register', views.register, name='gsc-register'),
     path('signin/signin_action', views.signin_action, name='gsc-signin_action'),
     path('addsite/addsite_action', views.addsite_action, name='gsc-addsite_action'),
-    path('graph', views.graph, name='gsc-graph')
+    path('graph', views.graph, name='gsc-graph'),
+    path('viewsites/authorize',views.authorize,name='gsc-authorization'),
+    path('oauth2callback', views.handleOAuth2Callback, name='gsc-oauth-handler')
 ]

@@ -1,11 +1,19 @@
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+#from paste.wsgiwrappers import settings
+
 from .models import users
 from .models import website
 # from .forms import websiteForm
 import psycopg2
 from django.contrib.auth.models import User, auth
+
+import google.oauth2.credentials
+import google_auth_oauthlib.flow
+from apiclient import errors
+from apiclient.discovery import build
 
 
 # from tkinter import tkinter
@@ -65,11 +73,7 @@ def documentation(request):
 
 
 def letsstart(request):
-    #selected_site = request.POST['website']
-    #print('#############')
-    #print(selected_site)
-    selected_site='sanket'
-    #print('@@@@@@@@@@')
+    selected_site = request.POST['website']
     return render(request, 'gsc/letsstart.html', {'website': selected_site})
 
 
@@ -125,3 +129,51 @@ def addsite_action(request):
     website_obj = website(web_name=web_name, website_url=website_url, user_id=request.user.id)
     website_obj.save()
     return render(request, 'gsc/index.html')
+
+
+def authorize(request):
+    flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
+        settings.GOOGLE_OAUTH2_CLIENT_SECRETS_JSON,
+        ['https://www.googleapis.com/auth/webmasters.readonly'])
+    flow.redirect_uri = 'http://we5.com:8000/oauth2callback'
+    authorization_url, state = flow.authorization_url(
+        # Enable offline access so that you can refresh an access token without
+        # re-prompting the user for permission. Recommended for web server apps.
+        access_type='offline',
+        # Enable incremental authorization. Recommended as a best practice.
+        include_granted_scopes='true')
+
+    # redirect user to authorization_url
+    return redirect(authorization_url)
+
+
+def handleOAuth2Callback(request):
+    state = request.GET.get('state', '')
+    flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
+        settings.GOOGLE_OAUTH2_CLIENT_SECRETS_JSON,
+        scopes=['https://www.googleapis.com/auth/webmasters.readonly'], state=state)
+    flow.redirect_uri = 'http://we5.com:8000/oauth2callback'
+    url = request.build_absolute_uri().replace('http:', 'https:')
+    print(url)
+    flow.fetch_token(authorization_response=url)
+
+    credentials = flow.credentials
+    storeThisAgainstUser = {
+        'token': credentials.token,
+        'refresh_token': credentials.refresh_token,
+        'token_uri': credentials.token_uri,
+        'client_id': credentials.client_id,
+        'client_secret': credentials.client_secret,
+        'scopes': credentials.scopes}
+    print( storeThisAgainstUser )
+
+def scheduledTask():
+
+    # for user in users:
+    # fetch users credentials from database
+    credentials = {}
+
+    webmasters_service = build('webmasters', 'v3', http=http, credentials=credentials)
+
+    # Retrieve list of properties in account
+    site_list = webmasters_service.sites().list().execute()

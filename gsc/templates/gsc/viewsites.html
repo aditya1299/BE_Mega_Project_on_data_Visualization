@@ -77,14 +77,18 @@
 </nav>
 <!--/.Navbar -->
 <br><br>
+<form action="authorize" method="post">
+  {%csrf_token%}
+  <input type="submit" name="submit" value="authorize">
+</form>
 <form action="letsstart" method="post">
   {%csrf_token%}
-  <select id ="website">
+
+  <p>Please select the website:</p>
     {% for site in websites %}
-    <option value="{{site.web_name}}">{{site.web_name}}</option>
+    <input type="radio" name="website" value="{{site.web_name}}">{{site.web_name}}<br>
 
     {% endfor %}
-    </select>
   <input type="submit" name="submit" value="visualize">
 </form>
 
